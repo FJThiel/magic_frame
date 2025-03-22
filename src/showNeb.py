@@ -3,7 +3,7 @@ from PIL import Image, ImageEnhance
 from image_sources import img_utils
 
 
-from epaper import epd 
+from epaper import waveshare_7_3_epd 
 
 if os.path.isfile("./IMGP8320.JPG"):
     
@@ -24,7 +24,9 @@ if os.path.isfile("./IMGP8320.JPG"):
         print("Failed to color-correct the image!")
 
 
-    epd.display(processed_image)
+    waveshare_7_3_epd.display(processed_image)
+
+
 else:
     print("Image not found")
     
