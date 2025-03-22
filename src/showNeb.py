@@ -25,6 +25,6 @@ if os.path.isfile("./IMGP8320.JPG"):
 
 
     epd.display(self.processed_image)
-else
+else:
     print("Image not found")
     
