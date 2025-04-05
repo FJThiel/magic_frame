@@ -13,13 +13,13 @@ except ImportError:
 
 
 try:
-    while True:
-        global accel, orientation
-	    x = accel.acceleration[0]
-	    y = accel.acceleration[1]
-	    z = accel.acceleration[2]
+	while True:
+		global accel, orientation
+		x = accel.acceleration[0]
+		y = accel.acceleration[1]
+		z = accel.acceleration[2]
 
-        print("x " + str(x) + " y " + str(y) + " z " + str(z))
-        
+		print("x " + str(x) + " y " + str(y) + " z " + str(z))
+
 except KeyboardInterrupt:
-    print('interrupted!')
+	print('interrupted!')
