@@ -3,8 +3,8 @@ Description = Magic frame daemon.
 After = network.target, multi-user.target
 
 [Service]
-WorkingDirectory=/home/pi/magic_frame/src/
-ExecStart = python3 main.py
+WorkingDirectory=/home/admin/magic_frame/src/
+ExecStart = .venv/bin/python3 main.py
 
 [Install]
 WantedBy = multi-user.target

@@ -1,4 +1,4 @@
-echo "Make sure you cloned the repository into /home/pi/magic_frame directory! Your username must be 'pi'!"
+echo "Make sure you cloned the repository into /home/admin/magic_frame directory! Your username must be 'admin'!"
 sudo timedatectl set-ntp true
 
 sudo cp magic_frame.service /etc/systemd/system/magic_frame.service
