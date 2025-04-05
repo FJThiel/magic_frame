@@ -14,7 +14,6 @@ except ImportError:
 
 try:
 	while True:
-		global accel, orientation
 		x = accel.acceleration[0]
 		y = accel.acceleration[1]
 		z = accel.acceleration[2]
