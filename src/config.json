@@ -41,11 +41,11 @@
 	// - daily
 	// - hourly
 	// - debug - refreshes every 3 minutes. DO NOT use this mode extensively, as it may out strain on the display.
-	"refresh_mode": "debug",
+	"refresh_mode": "daily",
 	// Time of the day when Magic Frame will update.
 	// Uses 24h time in HH:MM format.
 	// Only active when refresh_mode is set to 'daily'.
-	"daily_refresh_time": "05:00",
+	"daily_refresh_time": "12:00",
 
 	// Type of the display used.
 	// Currently supported options:
