@@ -46,6 +46,6 @@ class Art:
 		# we're brightening them up just a little bit.
 		try:
 			converter = ImageEnhance.Color(self.processed_image)
-			self.processed_image = converter.enhance(1.3)
+			self.processed_image = converter.enhance(1.5)
 		except:
 			print("Failed to color-correct the image!")
