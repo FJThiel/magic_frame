@@ -52,6 +52,10 @@ def update():
 	y = accel.acceleration[1]
 	z = accel.acceleration[2]
 
+	# Flip x and y axes since I mounted it the other way around lol
+	x = -x
+	y = -y
+
 	if abs(z) > 9:
 		orientation = "top"
 		return
