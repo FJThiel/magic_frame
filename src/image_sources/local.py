@@ -21,9 +21,9 @@ class LocalImageSource:
 		for file in files:
 			
 			if is_landscape:
-				full_path = os.path.join(config.current.local_images_path_landscape)
+				full_path = os.path.join(config.current.local_images_path_landscape, file)
 			else:
-				full_path = os.path.join(config.current.local_images_path_portrait)
+				full_path = os.path.join(config.current.local_images_path_portrait, file)
 			
 			print(full_path)
 			if not os.path.isfile(full_path):
