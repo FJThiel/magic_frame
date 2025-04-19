@@ -5,7 +5,8 @@ from image_sources import img_utils
 import orientation
 import battery
 import PIL
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageOps
+
 
 class Art:
 	image_name = ""
@@ -25,10 +26,14 @@ class Art:
 
 		if orientation.is_landscape():
 			self.original_image = source.get_image(True)
-			self.processed_image = img_utils.resize_image(self.original_image, 800, 480)
+			# apply exif rotation first because otherwise we get incorrectly rotated images
+			self.processed_image = ImageOps.exif_transpose(self.original_image)
+			self.processed_image = img_utils.resize_image(self.processed_image, 800, 480)
 		else:
 			self.original_image = source.get_image(False)
-			self.processed_image = img_utils.resize_image(self.original_image, 480, 800)
+			# apply exif rotation first because otherwise we get incorrectly rotated images
+			self.processed_image = ImageOps.exif_transpose(self.original_image)
+			self.processed_image = img_utils.resize_image(self.processed_image, 480, 800)
 
 		self.image_name = source.last_image_name
 		self.image_url = source.last_image_url
@@ -36,7 +41,7 @@ class Art:
 
 		self.processed_image = battery.add_low_battery_icon(self.processed_image)
 
-		# self.processed_image = img_utils.rotate_image(self.processed_image, orientation.get())
+		self.processed_image = img_utils.rotate_image(self.processed_image, orientation.get())
 
 		self.__adjust_color()
 
