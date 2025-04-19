@@ -36,7 +36,7 @@ class Art:
 
 		self.processed_image = battery.add_low_battery_icon(self.processed_image)
 
-		self.processed_image = img_utils.rotate_image(self.processed_image, orientation.get())
+		# self.processed_image = img_utils.rotate_image(self.processed_image, orientation.get())
 
 		self.__adjust_color()
 
