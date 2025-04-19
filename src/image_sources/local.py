@@ -11,10 +11,20 @@ class LocalImageSource:
 	last_image_name = "none"
 
 	def get_image(self, is_landscape):
-		files = os.listdir(config.current.local_images_path)
+		
+		if is_landscape:
+			files = os.listdir(config.current.local_images_path_landscape)
+		else:
+			files = os.listdir(config.current.local_images_path_portrait)
+
 		random.shuffle(files)
 		for file in files:
-			full_path = os.path.join(config.current.local_images_path, file)
+			
+			if is_landscape:
+				full_path = os.path.join(config.current.local_images_path_landscape)
+			else:
+				full_path = os.path.join(config.current.local_images_path_portrait)
+			
 			print(full_path)
 			if not os.path.isfile(full_path):
 				print("Not a file!")

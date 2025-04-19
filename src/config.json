@@ -24,7 +24,8 @@
 	// local image source will pull its images from this directory.
 	// If you don't use the local image source, you don't have to 
 	// fill this field.
-	"local_images_path": "local_images",
+	"local_images_path_landscape": "local_images_landscape",
+	"local_images_path_portrait": "local_images_portrait",
 
 	// Doesn't check for repeating images when pulling from local directory.
 	"local_allow_repeats": true,
